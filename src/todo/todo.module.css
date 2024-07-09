@@ -1,0 +1,28 @@
+.todo{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: brown;
+    color: white;
+
+}
+
+.main{
+    width: 350px;
+    height: 300px;
+
+}
+
+.task{
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: large;
+    list-style-type: none;
+}
+
+.list{
+    list-style-type: none;
+   
+}

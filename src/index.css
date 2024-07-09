@@ -1,0 +1,27 @@
+.main{
+  width: 200px;
+  height: 450px;
+  background-color: orange;
+  margin: auto;
+}
+
+.main .image{
+  width: 200px;
+}
+
+.main .heading{
+  text-align: center;
+}
+
+.main .p1{
+  text-align: center;
+  color: white;
+}
+
+.main .btn{
+  background-color: green;
+  color: white;
+  width: 200px;
+  border: none;
+  padding: 4px 0px 4px 0px;
+}
