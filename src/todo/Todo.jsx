@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoCss from "./todo.module.css"
+import toast from "react-hot-toast";
+
 
 function Todo() {
 
@@ -34,6 +36,11 @@ function Todo() {
         setTodo([...todo,{taskName:task,complete:false}])
         }
         setTask('')
+        toast.success("Task Added...",{
+            style:{
+                marginTop:"30px"
+            }
+        })
     }
 
     function handleChecked(id){
@@ -61,6 +68,56 @@ function Todo() {
 
     }
 
+    function handleDelete(id){
+        const ArrayDelete = [...todo]
+        const deleteArray = ArrayDelete.filter((value,index)=>{
+            return id !== index
+        })
+
+        setTodo(deleteArray)
+        toast.error("Task Delete...",{
+            duration:1000,
+            style:{
+                marginTop:"30px"
+            }
+        })
+    }
+
+    function handleUpdate(id){
+        const arrayUpdate = [...todo]
+        const updateValue = arrayUpdate[id]
+        let promptValue = prompt(`Edit value :-  ${updateValue.taskName}`,updateValue.taskName)
+
+        if(promptValue){
+            let newValue = {taskName:promptValue,complete:false}
+            arrayUpdate.splice(id,1,newValue)
+            setTodo(arrayUpdate)
+        }
+
+       
+    }
+
+    useEffect(()=>{
+        const myArray = [...todo]
+        const completeTask = myArray.filter((value,index)=>{
+            return value.complete
+         })
+ 
+         setCtask(completeTask.length)
+ 
+         const remainingTask = myArray.filter((value,index)=>{
+            return ! value.complete
+         })
+ 
+         setRtask(remainingTask.length)
+ 
+         const totaltasks = myArray.filter((value,index)=>{
+             return value
+         })
+ 
+         setTotaltask(totaltasks.length)
+    },[todo])
+
     return ( 
         <>
         <h4 style={{textAlign:"center"}}>Total Task:- {TotalTask} </h4>
@@ -83,7 +140,9 @@ function Todo() {
                         <ul className={TodoCss.list}>
                            <span><li><input type="checkbox" checked={value.complete}
                            onClick={()=>{handleChecked(index)}}
-                            /> <span style={{textDecoration:value.complete ? "line-through" : ""}}>{value.taskName}</span> <i className="bi bi-trash3-fill float-end text-info"></i> <i className="bi bi-pencil-square float-end me-3 text-warning"></i> </li></span>
+                            /> <span style={{textDecoration:value.complete ? "line-through" : ""}}>{value.taskName}</span> <i className="bi bi-trash3-fill float-end text-info" onClick={()=>{handleDelete(index)}}></i> <i className="bi bi-pencil-square float-end me-3 text-warning"
+                                onClick={()=>{handleUpdate(index)}}
+                            ></i> </li></span>
                         </ul>
                         
                     ))
