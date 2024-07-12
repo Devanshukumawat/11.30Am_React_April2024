@@ -7,9 +7,9 @@ function UseEffect() {
 
     useEffect(()=>{
         console.log("UseEffect Function")
-    },[value])
+    },[name])
 
-    
+
     return ( 
         <>
             <h1>UseEffect</h1>

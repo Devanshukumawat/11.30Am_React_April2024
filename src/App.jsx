@@ -1,6 +1,8 @@
 
 
+import Data from "./Data"
 import Todo from "./todo/Todo"
+import UseEffect from "./UseEffect"
 // import UseEffect from "./UseEffect"
 
 
@@ -19,9 +21,11 @@ function App(){
   return(
     <>
 
+    <Data/>
+
     {/* <UseEffect/> */}
 
-    <Todo/>
+    {/* <Todo/> */}
 
     {/* <Form/> */}
 
