@@ -10,7 +10,7 @@ function Todo() {
     const [Rtask,setRtask] =useState(0)
     const [TotalTask,setTotaltask] =useState(0)
 
-    const AllTask = [
+    const AllTask = JSON.parse(localStorage.getItem("todo")) || [
         {taskName:"Buy Car", complete:true},
         {taskName:"Buy Guitar", complete:false},
         {taskName:"Buy Phone", complete:true}
@@ -116,6 +116,10 @@ function Todo() {
          })
  
          setTotaltask(totaltasks.length)
+
+         localStorage.setItem("todo",JSON.stringify(myArray))
+
+         
     },[todo])
 
     return ( 
@@ -137,7 +141,7 @@ function Todo() {
                 {
 
                     todo.map((value,index)=>(
-                        <ul className={TodoCss.list}>
+                        <ul className={TodoCss.list} key={index}>
                            <span><li><input type="checkbox" checked={value.complete}
                            onClick={()=>{handleChecked(index)}}
                             /> <span style={{textDecoration:value.complete ? "line-through" : ""}}>{value.taskName}</span> <i className="bi bi-trash3-fill float-end text-info" onClick={()=>{handleDelete(index)}}></i> <i className="bi bi-pencil-square float-end me-3 text-warning"
