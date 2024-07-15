@@ -1,9 +1,16 @@
 
 
-import Data from "./Data"
+// import Data from "./Data"
 import Todo from "./todo/Todo"
-import UseEffect from "./UseEffect"
 // import UseEffect from "./UseEffect"
+// import UseEffect from "./UseEffect"
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+import Home from "./webpage/Home"
+import Navbar from "./webpage/Navbar"
+import Footer from "./webpage/Footer"
+import About from "./webpage/About"
+import Contact from "./webpage/Contact"
+import Single from "./webpage/Single"
 
 
 
@@ -21,7 +28,20 @@ function App(){
   return(
     <>
 
-    <Data/>
+
+    <BrowserRouter>
+    <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/todo" element={<Todo/>}/>
+        <Route path="/contact/:abc" element={<Contact/>}/>
+        <Route path="/single/:abc" element={<Single/>}/>
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
+
+    {/* <Data/> */}
 
     {/* <UseEffect/> */}
 
