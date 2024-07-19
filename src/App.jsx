@@ -11,6 +11,12 @@ import Footer from "./webpage/Footer"
 import About from "./webpage/About"
 import Contact from "./webpage/Contact"
 import Single from "./webpage/Single"
+import Mui from "./Mui"
+
+import Appbar from "./Appbar"
+import Signin from "./webpage/Signin"
+import Hooks from "./useref/Hooks"
+import Test1 from "./useReducer/Test1"
 
 
 
@@ -30,13 +36,17 @@ function App(){
 
 
     <BrowserRouter>
-    <Navbar/>
+    <Appbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/todo" element={<Todo/>}/>
+        <Route path="/signin" element={<Signin/>}/>
+        <Route path="/mui" element={<Mui/>}/>
         <Route path="/contact/:abc" element={<Contact/>}/>
         <Route path="/single/:abc" element={<Single/>}/>
+        <Route path="/ref" element={<Hooks/>}/>
+        <Route path="/reducer" element={<Test1/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>
@@ -77,6 +87,8 @@ function App(){
 
         {/* <Counter/> */}
      
+        {/* <Appbar/>
+        <Mui/> */}
 
     </>
   )

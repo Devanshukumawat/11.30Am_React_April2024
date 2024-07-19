@@ -1,5 +1,7 @@
+import { Box, Button } from "@mui/material";
 import { useEffect, useState } from "react";
 import {Link} from "react-router-dom"
+import AbcIcon from '@mui/icons-material/Abc';
 
 function Home() {
   const [product, setProduct] = useState([]);
@@ -17,6 +19,11 @@ function Home() {
 
   return (
     <>
+
+    <Button variant="contained" endIcon={<AbcIcon size="large"/>} size="large">Text</Button>
+
+    <Box>Container</Box>
+
       <h1>Home Page</h1>
       {product.map((value, index) => (
         <>
