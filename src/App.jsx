@@ -17,6 +17,8 @@ import Appbar from "./Appbar"
 import Signin from "./webpage/Signin"
 import Hooks from "./useref/Hooks"
 import Test1 from "./useReducer/Test1"
+import Tailwind from "./Tailwind/Tailwind"
+import Weather from "./Weather/Weather"
 
 
 
@@ -47,6 +49,8 @@ function App(){
         <Route path="/single/:abc" element={<Single/>}/>
         <Route path="/ref" element={<Hooks/>}/>
         <Route path="/reducer" element={<Test1/>}/>
+        <Route path="/tailwind" element={<Tailwind/>}/>
+        <Route path="/weather" element={<Weather/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

@@ -21,7 +21,9 @@ const pages = [
     {navItem:"Sigin",url:"/signin"},
     {navItem:"Mui",url:"/mui"},
     {navItem:"UserRef",url:"/ref"},
-    {navItem:"UseReducer",url:"/reducer"}
+    {navItem:"UseReducer",url:"/reducer"},
+    {navItem:"Tailwind",url:"/tailwind"},
+    {navItem:"Weather",url:"/weather"}
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
