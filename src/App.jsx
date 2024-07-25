@@ -19,7 +19,13 @@ import Hooks from "./useref/Hooks"
 import Test1 from "./useReducer/Test1"
 import Tailwind from "./Tailwind/Tailwind"
 import Weather from "./Weather/Weather"
+import PropDrill from "./propdrill/PropDrill"
+import ChildA from "./useContext/ChildA"
+import { createContext } from "react"
 
+
+const data = createContext()
+const data1 = createContext()
 
 
 function App(){
@@ -30,14 +36,23 @@ function App(){
     
   // ]
 
-  // let userData = "Hey Buddy ...!"
+  let userData = "Hey Buddy ...!"
+  let text = "Kal ho na ho"
+
 
 
   return(
+
+    // create , provide , consumer
     <>
 
+    <data.Provider value={userData}>
+    <data1.Provider value={text}>
+    <ChildA/>
+    </data1.Provider>
+    </data.Provider>
 
-    <BrowserRouter>
+    {/* <BrowserRouter>
     <Appbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
@@ -51,9 +66,10 @@ function App(){
         <Route path="/reducer" element={<Test1/>}/>
         <Route path="/tailwind" element={<Tailwind/>}/>
         <Route path="/weather" element={<Weather/>}/>
+        <Route path="/propdrill" element={<PropDrill data={userData}/>}/>
       </Routes>
       <Footer/>
-    </BrowserRouter>
+    </BrowserRouter> */}
 
     {/* <Data/> */}
 
@@ -99,3 +115,4 @@ function App(){
 }
 
 export default App
+export {data,data1}

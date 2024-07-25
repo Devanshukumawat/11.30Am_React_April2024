@@ -156,7 +156,6 @@ function Todo() {
          const remainingTask = myArray.filter((value,index)=>{
             return ! value.complete
          })
- 
          setRtask(remainingTask.length)
  
          const totaltasks = myArray.filter((value,index)=>{

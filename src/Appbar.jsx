@@ -23,7 +23,8 @@ const pages = [
     {navItem:"UserRef",url:"/ref"},
     {navItem:"UseReducer",url:"/reducer"},
     {navItem:"Tailwind",url:"/tailwind"},
-    {navItem:"Weather",url:"/weather"}
+    {navItem:"Weather",url:"/weather"},
+    {navItem:"PropDrill",url:"/propdrill"}
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
